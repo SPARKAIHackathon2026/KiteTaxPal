@@ -1,217 +1,332 @@
-# KiteTax Pal
-> Web3 自动化税务合规智能体 - 让复杂税务合规变得简单透明
+# KiteTax Pal — 项目总体说明
 
-<div align="center">
-  <img src="/public/home.png" alt="KiteTax Pal - Web3 自动化税务合规智能体" width="800"/>
-</div>
-
-
-## 📋 项目概述
-
-KiteTax Pal 是基于 Kite AI 基础设施构建的 Web3 自动化税务合规解决方案，致力于将复杂的税务合规从"事后被动应对"转变为"交易发生时主动完成"，实现用户"无感"的自动报税体验。
-
-### 🎯 核心价值
-
-- **实时合规**：交易发生时自动完成税务计算与申报
-- **无感体验**：用户无需专业知识，系统自动处理复杂税务逻辑
-- **全球框架**：为 2026 年全球 CARF 监管框架做好准备
-- **高准确率**：99.9% 计算准确率，<1s 实时响应
-
-## 🌐 商业背景
-
-随着全球加密货币监管日趋严格，特别是 2026 年 CARF（加密资产报告框架）的全面实施，Web3 用户面临着前所未有的税务合规挑战：
-
-- **监管压力**：全球 50+ 主要国家已建立加密货币税务监管框架
-- **计算复杂**：多币种、跨链、DeFi 协议等场景税务计算极其复杂
-- **合规成本**：传统税务服务成本高昂，且缺乏 Web3 专业能力
-- **风险隐患**：错误申报可能导致法律风险和财务损失
-
-KiteTax Pal 应运而生，为 Web3 用户提供专业、高效、低成本的税务合规解决方案。
-
-## ⚡ 核心功能
-
-### 🔍 多源数据对账
-穿透式整合碎片化的链上交易数据，自动识别并归类多币种、跨链交易，构建完整的税务数据视图。
-
-### 🧮 确定性逻辑计税
-利用经过审计的确定性算法自动完成计税，确保每一笔交易的税务计算准确无误，避免人工计算的错误风险。
-
-### 🛡️ 受控自主支付
-严格遵循"最小授权"与"白名单支付"原则，用户仅需授权专用纳税钱包，智能体自动将税金划转至官方验证地址。
-
-### 📄 不可篡改凭证
-生成不可篡改的链上交易记录作为完税凭证，所有税务数据永久保存在区块链上，随时可供审计查验。
-
-### 💰 多币种支持
-支持 BTC、ETH、USDT 等主流加密货币及各类 DeFi 代币，自动获取实时汇率，精确计算法币等值税额。
-
-### 🌍 全球合规框架
-为 2026 年全球 CARF 监管框架做好准备，实时更新各国税务法规，确保您的资产在透明监管中安全流动。
-
-## 🏗️ 技术架构
-
-### 前端技术栈
-- **框架**: Next.js 16.1.6 (App Router)
-- **语言**: TypeScript 5.x
-- **样式**: Tailwind CSS 4.x + 自定义设计系统
-- **UI 组件**: Radix UI + shadcn/ui
-- **状态管理**: Zustand
-- **动画**: GSAP + Framer Motion
-- **3D 渲染**: Three.js + React Three Fiber
-
-### Web3 集成
-- **钱包连接**: RainbowKit + Wagmi
-- **智能合约交互**: Viem
-- **MetaMask 集成**: MetaMask SDK
-
-### 数据处理
-- **HTTP 客户端**: Axios
-- **数据验证**: Zod
-- **表单处理**: React Hook Form + @hookform/resolvers
-
-### 开发工具
-- **包管理**: pnpm
-- **代码规范**: ESLint + TypeScript
-- **构建优化**: Next.js React Compiler
-- **样式处理**: PostCSS + Tailwind CSS
-
-## 🚀 快速开始
-
-### 环境要求
-- Node.js 18.x 或更高版本
-- pnpm 8.x 或更高版本
-
-### 安装依赖
-```bash
-# 使用 pnpm（推荐）
-pnpm install
-
-# 或使用 npm
-npm install
-
-# 或使用 yarn
-yarn install
-```
-
-### 开发环境启动
-```bash
-# 启动开发服务器
-pnpm dev
-
-# 或使用其他包管理器
-npm run dev
-yarn dev
-bun dev
-```
-
-访问 [http://localhost:3000](http://localhost:3000) 查看应用。
-
-### 构建生产版本
-```bash
-# 构建生产版本
-pnpm build
-
-# 启动生产服务器
-pnpm start
-```
-
-### 代码检查
-```bash
-# 运行 ESLint 检查
-pnpm lint
-```
-
-## 📁 项目结构
-
-```
-src/
-├── app/                    # Next.js App Router 页面
-│   ├── sections/          # 页面区块组件
-│   │   ├── Hero.tsx       # 首页英雄区域
-│   │   ├── Features.tsx   # 功能特性展示
-│   │   ├── Team.tsx       # 团队介绍
-│   │   └── ...
-│   ├── dashboard/         # 税务仪表板
-│   ├── kitetax/          # KiteTax 主要功能
-│   └── ...
-├── components/            # 可复用组件
-│   ├── ui/               # 基础 UI 组件
-│   ├── FluidBackground.tsx # 3D 流体背景
-│   └── ...
-├── lib/                  # 工具库和配置
-│   ├── api/             # API 客户端
-│   └── ...
-├── store/               # 状态管理
-└── types/               # TypeScript 类型定义
-```
-
-## 🔧 配置说明
-
-### Tailwind CSS 自定义主题
-项目使用自定义的 Tailwind 配置，包含：
-- 品牌色彩系统 (#3898EC 为主色调)
-- 自定义动画效果
-- 响应式设计断点
-- 玻璃态效果样式
-
-## 🧪 核心算法
-
-### 税务计算引擎
-支持：
-- **美国税务**: 资本利得税 + 普通收入税
-- **新加坡税务**: 投资意图区分 + 交易所得税
-- **多国支持**: 可扩展的税务规则框架
-
-### 数据处理流程
-1. **数据采集**: 多源链上数据聚合
-2. **交易分类**: AI 驱动的交易类型识别
-3. **税务计算**: 确定性算法计算应纳税额
-4. **合规检查**: 多维度合规性验证
-5. **自动申报**: 链上完税凭证生成
-
-## 🎨 设计系统
-
-### 视觉风格
-- **主色调**: 科技蓝 (#3898EC)
-- **背景**: 深色主题 + 3D 流体效果
-- **交互**: 玻璃态卡片 + 平滑动画
-- **字体**: Inter 字体系统
-
-### 响应式设计
-- 移动端优先设计理念
-- 支持桌面、平板、手机全设备适配
-- 流体布局自适应不同屏幕尺寸
-
-## 🔒 安全特性
-
-- **最小授权原则**: 仅请求必要的钱包权限
-- **白名单支付**: 税金只能划转至官方验证地址
-- **数据加密**: 敏感数据端到端加密
-- **审计追踪**: 所有操作链上可查
-
-## 🌟 性能优化
-
-- **代码分割**: Next.js 自动代码分割
-- **图片优化**: Next.js Image 组件优化
-- **缓存策略**: 智能缓存机制
-- **懒加载**: 组件和资源按需加载
-
-## 🤝 贡献指南
-
-1. Fork 项目
-2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 开启 Pull Request
-
-## 📄 许可证
-
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
-
-## 📞 联系我们
-
-- **项目主页**: [https://github.com/SPARKAIHackathon2026/front-end](https://github.com/SPARKAIHackathon2026/front-end)
+> **KiteTax Pal** 是基于 Kite AI 的 Web3 自动化税务合规与链上支付 Demo，参与 **Kite AI 支付赛道（Payment Track）**。本文档为项目总体说明，涵盖前后端架构、功能、环境搭建与运行步骤。
 
 ---
 
-**让 Web3 税务合规变得简单透明** 🚀
+## 一、项目简介
+
+### 1.1 项目名称与定位
+
+- **项目名称**：KiteTax Pal  
+- **定位**：AI Agent 驱动的链上税务结算与自动支付 Demo（PoC / MVP）  
+- **赛道**：Kite AI — 支付（Payment Track）  
+- **仓库结构**：  
+  - **后端**：`kite-payment`（Express + Kite AA SDK）  
+  - **前端**：`front-end`（Next.js + RainbowKit + React Query）
+
+### 1.2 一句话总结
+
+> 用户连接钱包、填写税务身份后，由 **Kite Agent** 自动完成链上交易分析（mock）、税额计算、策略对比，并在 **权限与额度控制** 下，向白名单税务机构地址发起 **真实/测试网链上支付**（KITE 或 USDT 可配置），实现「创建 Agent → 发起支付 → 成功到账」的完整闭环。
+
+---
+
+## 二、黑客松赛道要求对应
+
+### 2.1 赛道目标与技术使用范围
+
+| 赛道要求 | 本项目实现 |
+|----------|------------|
+| **AI 智能体在链上完成真实或测试网稳定币支付** | ✅ 使用 Kite Agent Account 通过 UserOperation 在 Kite 测试网完成链上支付；支持 **Kite 测试网原生 KITE 代币** 或 **测试网 USDT（ERC20）**，可通过配置切换。 |
+| **展示自动化结算与基础风控能力** | ✅ 后端根据用户地址、税务身份与策略自动完成税额计算与结算；支付前进行白名单与最大金额校验（`permission.js`）。 |
+| **基于 Kite AI 文档完成集成** | ✅ 使用官方 **gokite-aa-sdk** 创建 Agent Account、发送 UserOperation，网络与 Bundler 配置符合 Kite 文档。 |
+| **至少使用以下能力之一** | ✅ **Agent 身份系统** + **稳定币/链上支付** + **支付权限/额度控制** + **官方 SDK** 均已使用。 |
+
+### 2.2 新人入门最低实现要求（获奖门槛）
+
+| 项目 | 要求 | 本项目 |
+|------|------|--------|
+| **链上支付** | 至少完成 1 笔真实或测试网稳定币转账 | ✅ `POST /api/tax/settle` 调用 Kite AA SDK 在测试网发起链上转账（KITE 或 USDT）；前端「使用 Kite AI 支付」按钮触发该流程。 |
+| **Agent 身份** | 使用 Kite Agent 或身份体系 | ✅ 使用 **Kite Agent Account**（`accountAA.js` + `agentFactory.js`），由 SDK 根据 owner 私钥派生 AA 钱包并执行支付。 |
+| **权限控制** | 设置基础支付额度/规则 | ✅ 白名单税务机构地址（`config/tax.js`）+ 最大缴税金额上限（如 1000）+ 支付前校验（`permission.js`）。 |
+| **可复现性** | 提供完整运行说明或演示 | ✅ 本文档及子项目 README 提供环境搭建、配置与运行步骤；可选提供演示视频或在线 Demo。 |
+
+### 2.3 作品提交规范对应
+
+- **项目代码仓库**：后端 `kite-payment`、前端 `front-end`（可为同一 monorepo 下两个目录或两个独立仓库）。  
+- **项目说明文档（README）**：本文档（总体）+ `kite-payment/README.md`（后端）+ `front-end/README.md`（前端），包含环境搭建、运行步骤、核心功能说明。  
+- **演示视频或 Demo 链接**：可选，建议录制「连接钱包 → 填写身份 → 查看分析 → 一键支付」全流程。
+
+---
+
+## 三、项目背景与设计动机
+
+随着区块链与 Web3 生态发展，链上交易呈现 **高频化、自动化、币种多样化** 的特点，用户面临：
+
+- 单地址在征税周期内 **交易记录众多**；  
+- **多资产** 盈亏计算复杂；  
+- 各国税务制度不同，人工申报成本高、出错风险大；  
+- 申报错误可能带来合规与监管风险。
+
+KiteTax Pal 尝试回答：
+
+> **能否让 AI Agent 自动完成「链上税务结算 + 支付」，实现用户无感的合规缴税？**
+
+在 Kite AI Payment Track 中，我们基于 **Agent Account、链上支付与权限控制** 实现：
+
+- 用户授权一个 **Tax Agent**；  
+- Agent 自动分析（当前为 mock）链上交易收益；  
+- 根据（mock）KYC/税务身份计算应缴税额；  
+- 在 **白名单 + 额度** 控制下，自动向税务机构地址完成链上支付。
+
+当前为 **概念验证（PoC）/ MVP**，重点在于跑通「创建 Agent → 发起支付 → 成功到账」流程，而非对接真实税法或税务系统。
+
+---
+
+## 四、系统架构
+
+### 4.1 整体架构图
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│  前端 front-end (Next.js)  默认 http://localhost:3000                │
+│  - 钱包连接 (RainbowKit)  税务档案  税务分析  策略对比  一键支付       │
+└─────────────────────────────────────────────────────────────────────┘
+                                      │
+                                      │ HTTP  (默认 baseURL: http://localhost:3001)
+                                      ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│  后端 kite-payment (Express)  建议 PORT=3001 与前端对接                │
+│  API 路由 → Controller → Service / Domain → Agent                     │
+│  - mock 交易/KYC/税务计算  权限校验  Kite Agent Account 链上支付      │
+└─────────────────────────────────────────────────────────────────────┘
+                                      │
+                                      │ Kite AA SDK (UserOperation)
+                                      ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│  Kite 测试网 — 链上支付（KITE 或 USDT）                                │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+### 4.2 后端（kite-payment）分层
+
+- **API 层**：`src/api/routes.js` + 各 `*.controller.js`，处理 HTTP 请求与参数校验。  
+- **Service 层**：`src/services/taxSettlementService.js`，编排结算流程（权限校验 → 调用 Agent 支付）。  
+- **Domain 层**：`src/domain/` — 交易、KYC/税务档案、税额计算、税务机构解析、钱包绑定（当前多为 mock/内存）。  
+- **Agent 层**：`src/agent/` — Kite Agent Account 创建、链上支付（KITE 或 USDT）、支付权限与额度校验。  
+- **Config**：`src/config/kite.js`（网络、RPC、Bundler、支付代币类型与 USDT 合约）、`tax.js`（税率、税务机构白名单、最大金额）。
+
+### 4.3 前端（front-end）与后端对接
+
+- **API 客户端**：`src/lib/api-client.ts`，`baseURL` 默认 `http://localhost:3001`，由 `NEXT_PUBLIC_API_BASE_URL` 覆盖。  
+- **数据请求**：`src/lib/api/hooks.ts` 使用 React Query 封装：交易列表、税务档案、税务分析、策略对比、结算支付、钱包绑定等。  
+- **主流程页**：`src/app/dashboard/page.tsx` — 四步流程（连接钱包 → 身份信息 → 智能方案 → 支付完成），直接调用上述 API。
+
+---
+
+## 五、核心功能说明
+
+### 5.1 后端核心能力
+
+| 能力 | 说明 |
+|------|------|
+| **Agent 身份与支付** | 使用 `gokite-aa-sdk` 创建 Agent Account，通过 UserOperation 在 Kite 测试网发起转账（原生 KITE 或 ERC20 USDT）。 |
+| **权限与额度控制** | 仅允许向 `config/tax.js` 中配置的税务机构地址付款；单笔金额不得超过 `maxTaxPayment`（如 1000）。 |
+| **税务分析** | 基于 mock 交易与用户税务档案，按 FIFO/HIFO/LIFO 策略计算税额与资本利得（`taxCalculator.js` + `taxResolver.js`）。 |
+| **REST API** | 钱包绑定、交易列表、税务档案 CRUD、税务分析、策略对比、税务结算（链上支付）。 |
+
+### 5.2 前端核心能力
+
+| 能力 | 说明 |
+|------|------|
+| **钱包连接** | RainbowKit + Wagmi，支持常见钱包连接与链上身份。 |
+| **税务档案** | 填写/保存国家、税务居民地、税年等，与后端 `POST/GET /api/tax/profile` 同步。 |
+| **分析与策略** | 请求后端分析接口与策略对比接口，展示交易笔数、税额、资本利得及 FIFO/HIFO/LIFO 推荐。 |
+| **一键支付** | 「使用 Kite AI 支付」触发 `POST /api/tax/settle`，展示交易哈希或「需初始化 AA 钱包」等提示。 |
+| **页面结构** | 首页、Dashboard（主流程）、税务向导（wizard）、税表页、kitetax 等（见 `src/app/`）。 |
+
+### 5.3 支付代币：KITE 与 USDT
+
+- **默认**：使用 Kite 测试网 **原生 KITE 代币**（18 位小数，`value` 转账）。  
+- **可选**：通过配置切换为 Kite 测试网 **USDT（ERC20）**：  
+  - 后端 `kite-payment`：在 `.env` 中设置 `PAYMENT_TOKEN=USDT` 和 `KITE_TESTNET_USDT_ADDRESS=0x...`（或于 `src/config/kite.js` 中配置）。  
+  - 逻辑在 `src/agent/paymentAA.js`：当 `paymentToken === "USDT"` 时，对 USDT 合约调用 `transfer(收款地址, amount)`（6 位小数）。  
+
+具体说明见 `kite-payment/README.md` 第四节。
+
+---
+
+## 六、技术栈概览
+
+### 6.1 后端（kite-payment）
+
+- **运行环境**：Node.js（建议 18+），ES Module。  
+- **框架**：Express。  
+- **核心依赖**：`gokite-aa-sdk`、`ethers`、`dotenv`。  
+- **入口**：`src/app.js`，监听 `process.env.PORT`（默认 3000，与前端对接建议 3001）。
+
+### 6.2 前端（front-end）
+
+- **框架**：Next.js（App Router）、React、TypeScript。  
+- **样式**：Tailwind CSS。  
+- **Web3**：RainbowKit、Wagmi、Viem。  
+- **数据与状态**：React Query（API）、Zustand、Axios。  
+- **UI 与动效**：Radix UI、Motion 等。  
+- **开发**：pnpm/npm，默认端口 3000。
+
+---
+
+## 七、项目目录结构（概要）
+
+```
+projects/
+├── README.md                 # 本文件 — KiteTax Pal 总体说明
+├── kite-payment/              # 后端
+│   ├── src/
+│   │   ├── app.js             # 服务入口
+│   │   ├── server.js          # Express 应用与 CORS
+│   │   ├── config/            # kite.js, tax.js
+│   │   ├── agent/             # Agent Account、支付、权限
+│   │   ├── api/               # 路由与 Controller
+│   │   ├── domain/            # 交易、KYC、税务、钱包
+│   │   └── services/          # taxSettlementService
+│   ├── .env                   # 私钥、PORT、支付代币等（勿提交）
+│   ├── package.json
+│   └── README.md              # 后端详细说明
+│
+└── front-end/                 # 前端
+    ├── src/
+    │   ├── app/               # 页面：dashboard, home, tax, wizard, kitetax 等
+    │   ├── components/        # UI 与业务组件
+    │   ├── lib/               # api-client, api/hooks
+    │   └── store/
+    ├── .env.local             # NEXT_PUBLIC_API_BASE_URL 等（可选）
+    ├── package.json
+    └── README.md              # 前端详细说明
+```
+
+更细的目录与 API 列表见 `kite-payment/README.md` 与 `front-end/README.md`。
+
+---
+
+## 八、环境搭建与配置
+
+### 8.1 环境要求
+
+- **Node.js**：18.x 或更高（前后端通用）。  
+- **包管理**：后端 `npm`；前端 `pnpm` 或 `npm`。
+
+### 8.2 后端（kite-payment）初始化与配置
+
+1. **进入目录**
+   ```bash
+   cd ~/projects/kite-payment
+   ```
+
+2. **安装依赖**
+   ```bash
+   npm install
+   ```
+
+3. **环境变量**  
+   在项目根目录创建 `.env`（勿提交到版本库），至少包含：
+   - `PRIVATE_KEY=0x...` — 用于 Kite Agent Account 的 owner 私钥（测试网建议使用测试钱包）。  
+   - `PORT=3001` — 与前端默认 `NEXT_PUBLIC_API_BASE_URL` 一致时使用 3001。  
+
+   可选：
+   - `PAYMENT_TOKEN=USDT` — 使用 USDT 支付时填写。  
+   - `KITE_TESTNET_USDT_ADDRESS=0x...` — Kite 测试网 USDT 合约地址（使用 USDT 时必填）。  
+   - `KITE_RPC=...` — 覆盖默认 RPC（如需要）。
+
+4. **启动**
+   ```bash
+   npm start
+   # 或
+   node src/app.js
+   ```
+   服务默认监听 `http://localhost:3001`（若 `PORT=3001`）。
+
+### 8.3 前端（front-end）初始化与配置
+
+1. **进入目录**
+   ```bash
+   cd ~/projects/front-end
+   ```
+
+2. **安装依赖**
+   ```bash
+   pnpm install
+   # 或 npm install
+   ```
+
+3. **环境变量（可选）**  
+   在项目根目录创建 `.env.local`，用于覆盖默认后端地址：
+   ```bash
+   NEXT_PUBLIC_API_BASE_URL=http://localhost:3001
+   ```
+   若后端使用其他端口或域名，在此修改。
+
+4. **启动**
+   ```bash
+   pnpm dev
+   # 或 npm run dev
+   ```
+   浏览器访问 `http://localhost:3000`。
+
+---
+
+## 九、运行步骤与验证
+
+### 9.1 推荐启动顺序
+
+1. 先启动 **后端**（`kite-payment`），确认无报错、监听端口正确。  
+2. 再启动 **前端**（`front-end`），确认能打开首页与 Dashboard。
+
+### 9.2 完整流程验证（与赛道「创建 Agent → 发起支付 → 成功到账」对应）
+
+1. 打开 `http://localhost:3000/dashboard`。  
+2. **Step 1**：连接钱包（RainbowKit）。  
+3. **Step 2**：填写税务身份（国家、税务居民地、税年等）并保存。  
+4. **Step 3**：等待分析完成，查看交易笔数、税额与 FIFO/HIFO/LIFO 策略对比，选择一档税额。  
+5. 点击 **「使用 Kite AI 支付」**：  
+   - 后端会创建/使用 Kite Agent Account 并发起链上支付；  
+   - 成功则返回 `txHash`，前端展示；  
+   - 若 AA 钱包未部署，会返回 `mode: "initialization-required"` 及说明，按提示向 AA 地址转入 Gas 后可再次支付。  
+6. **Step 4**：查看支付结果与历史记录。
+
+### 9.3 接口自测（可选）
+
+```bash
+# 后端健康/接口可达（会因缺参数返回错误，但说明服务在运行）
+curl -X POST http://localhost:3001/api/tax/settle -H "Content-Type: application/json" -d '{}'
+
+# 税务结算（替换为实际地址）
+curl -X POST http://localhost:3001/api/tax/settle \
+  -H "Content-Type: application/json" \
+  -d '{"userAddress":"0xYourAddress","amount":5}'
+```
+
+更多接口说明与示例见 `kite-payment/README.md` 与 `kite-payment/QUICK_START.md`。
+
+---
+
+## 十、常见问题
+
+- **端口**：前端默认 3000，后端建议 3001；若修改后端端口，需同步修改前端 `NEXT_PUBLIC_API_BASE_URL`。  
+- **CORS**：后端 `server.js` 已允许 `http://localhost:3000`，若前端端口或域名变更，需在后端调整 CORS 配置。  
+- **支付失败**：检查 `.env` 中 `PRIVATE_KEY` 与网络；若为 USDT，确认 `KITE_TESTNET_USDT_ADDRESS` 正确且 AA 钱包有足够 USDT 与 Gas。  
+- **前端请求 404/网络错误**：确认后端已启动且 `NEXT_PUBLIC_API_BASE_URL` 与后端地址一致。
+
+更详细的排查见 `kite-payment/QUICK_START.md` 与 `kite-payment/INTEGRATION_GUIDE.md`。
+
+---
+
+## 十一、相关文档索引
+
+| 文档 | 说明 |
+|------|------|
+| **本 README** | KiteTax Pal 总体说明、赛道对应、架构、配置与运行。 |
+| `kite-payment/README.md` | 后端详细说明：API、支付代币（KITE/USDT）、目录结构、运行与测试。 |
+| `kite-payment/QUICK_START.md` | 后端与前端快速启动、验证步骤、常见问题。 |
+| `kite-payment/INTEGRATION_GUIDE.md` | 前后端接口对接与分阶段验证说明。 |
+| `front-end/README.md` | 前端技术栈、功能、目录与运行说明。 |
+
+---
+
+## 十二、免责声明
+
+本项目为 **技术 Demo / 概念验证**，不构成任何法律、税务或合规建议。链上支付使用测试网与测试代币，请勿将私钥或主网资产用于未审核环境。
+
+---
+
+**KiteTax Pal** — 让 AI Agent 完成链上税务结算与支付，跑通「创建 Agent → 发起支付 → 成功到账」全流程。
